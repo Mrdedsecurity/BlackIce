@@ -1,5 +1,5 @@
 <p align="center">
-<pre align="center" style="font-size: 18px; line-height: 1.2; font-family: 'Courier New', monospace;"
+<pre align="center" style="color: #00ffffff;">
 ▄▄▄▄    ██▓    ▄▄▄       ▄████▄   ██ ▄█▀ ██▓ ▄████▄  ▓█████ 
 ▓█████▄ ▓██▒   ▒████▄    ▒██▀ ▀█   ██▄█▒ ▓██▒▒██▀ ▀█  ▓█   ▀ 
 ▒██▒ ▄██▒██░   ▒██  ▀█▄  ▒▓█    ▄ ▓███▄░ ▒██▒▒▓█    ▄ ▒███   
