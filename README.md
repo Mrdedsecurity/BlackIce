@@ -1,8 +1,21 @@
 <p align="center">
-  <h1 align="center">BlackIce</h1>
-  <h4 align="center">Shellcode loader generator with multiples features</h4>
-  <h6 align="center">Coded by MrDedSec (Shout out D3Ext!)</h6>
+<pre align="center">
+▄▄▄▄    ██▓    ▄▄▄       ▄████▄   ██ ▄█▀ ██▓ ▄████▄  ▓█████ 
+▓█████▄ ▓██▒   ▒████▄    ▒██▀ ▀█   ██▄█▒ ▓██▒▒██▀ ▀█  ▓█   ▀ 
+▒██▒ ▄██▒██░   ▒██  ▀█▄  ▒▓█    ▄ ▓███▄░ ▒██▒▒▓█    ▄ ▒███   
+▒██░█▀  ▒██░   ░██▄▄▄▄██ ▒▓▓▄ ▄██▒▓██ █▄ ░██░▒▓▓▄ ▄██▒▒▓█  ▄ 
+░▓█  ▀█▓░██████▒▓█   ▓██▒▒ ▓███▀ ░▒██▒ █▄░██░▒ ▓███▀ ░░▒████▒
+░▒▓███▀▒░ ▒░▓  ░▒▒   ▓▒█░░ ░▒ ▒  ░▒ ▒▒ ▓▒░▓  ░ ░▒ ▒  ░░░ ▒░ ░
+▒░▒   ░ ░ ░ ▒  ░ ▒   ▒▒ ░  ░  ▒   ░ ░▒ ▒░ ▒ ░  ░  ▒    ░ ░  ░
+ ░    ░   ░ ░    ░   ▒   ░        ░ ░░ ░  ▒ ░░           ░   
+ ░          ░  ░     ░  ░░ ░      ░  ░    ░  ░ ░         ░  ░
+      ░                  ░                   ░               
+</pre>
 </p>
+
+<h1 align="center">BlackIce</h1>
+<h4 align="center">Shellcode loader generator with multiple features</h4>
+<h6 align="center">Coded by MrDedSec (Shout out D3Ext!)</h6>
 
 <p align="center">
 
