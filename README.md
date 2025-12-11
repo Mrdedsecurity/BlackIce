@@ -1,7 +1,7 @@
 <p align="center">
-  <h1 align="center">Hooka</h1>
+  <h1 align="center">BlackIce</h1>
   <h4 align="center">Shellcode loader generator with multiples features</h4>
-  <h6 align="center">Coded with 💙 by D3Ext</h6>
+  <h6 align="center">Coded by MrDedSec (Shout out D3Ext!)</h6>
 </p>
 
 <p align="center">
@@ -30,7 +30,7 @@
 
 # Introduction
 
-Hooka is able to generate shellcode loaders with multiple capabilities. It is also based on other tools like [BokuLoader](https://github.com/boku7/BokuLoader), [Freeze](https://github.com/optiv/Freeze) or [Shhhloader](https://github.com/icyguider/Shhhloader), and it tries to implement more evasion features. Why in Golang? Although it's not the perfect language for malware dev, it works perfectly for testing purposes. Obviously if you want something professional and foolproof you should create your own loader in C++, C# or similars.
+BlackIce is able to generate shellcode loaders with multiple capabilities. It is also based on other tools like [BokuLoader](https://github.com/boku7/BokuLoader), [Freeze](https://github.com/optiv/Freeze) or [Shhhloader](https://github.com/icyguider/Shhhloader), and it tries to implement more evasion features. Why in Golang? Although it's not the perfect language for malware dev, it works perfectly for testing purposes. Obviously if you want something professional and foolproof you should create your own loader in C++, C# or similars.
 
 # Features
 
