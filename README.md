@@ -10,14 +10,6 @@
     <img src="https://img.shields.io/badge/license-MIT-_red.svg">
   </a>
 
-  <a href="https://github.com/D3Ext/Hooka/blob/main/CHANGELOG.md">
-    <img src="https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg">
-  </a>
-
-  <a href="https://github.com/D3Ext/go-recon/issues">
-    <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat">
-  </a>
-
 </p>
 
 <p align="center">
@@ -79,8 +71,8 @@ This tool is able to generate loaders with this features:
 Just clone the repository like this:
 
 ```sh
-git clone https://github.com/D3Ext/Hooka
-cd Hooka
+git clone https://github.com/Mrdedsecurity/BlackIce-Loader.git
+cd BlackIce-Loader
 make
 ```
 
@@ -90,7 +82,7 @@ After that you will find the binary under the `build/` folder
 
 > Help panel
 ```
-Usage of Hooka:
+Usage of BlackIce:
   REQUIRED:
     -i, --input string        payload to inject in raw format, as PE, as DLL or from a URL
     -o, --output string       name of output file (i.e. loader.exe)
@@ -167,12 +159,6 @@ $ hooka_linux_amd64 --calc -o loader.exe --user "DESKTOP-E1D6G0A\tom" --computer
 
 <img src="https://raw.githubusercontent.com/D3Ext/Hooka/main/assets/demo2.png">
 
-# TODO
-
-- ~~Check username and hostname before running~~
-- Add direct and indirect syscall
-- Add Chacha20 cypher to encrypt shellcode
-
 # Library
 
 The official Golang package has most of the already mentioned features and some others. To make use of it, see [here](https://github.com/D3Ext/Hooka/tree/main/examples) and [here](https://github.com/D3Ext/Hooka/tree/main/pkg/hooka)
@@ -212,8 +198,6 @@ Use this project under your own responsability! The author is not responsible of
 # License
 
 This project is under [MIT](https://github.com/D3Ext/Hooka/blob/main/LICENSE) license
-
-Copyright © 2025, *D3Ext*
 
 
 
