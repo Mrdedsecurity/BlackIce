@@ -22,8 +22,7 @@
 
 # Introduction
 
-BlackIce is able to generate shellcode loaders with multiple capabilities. It is also based on other tools like [BokuLoader](https://github.com/boku7/BokuLoader), [Freeze](https://github.com/optiv/Freeze) or [Shhhloader](https://github.com/icyguider/Shhhloader), and it tries to implement more evasion features. Why in Golang? Although it's not the perfect language for malware dev, it works perfectly for testing purposes. Obviously if you want something professional and foolproof you should create your own loader in C++, C# or similars.
-
+BlackIce is able to generate shellcode loaders with multiple capabilities. It is also based on Hooka (see [here](https://github.com/D3Ext/Hooka)). This tool is intended for my own learning, please no not use the tool for malicious activity.  
 # Features
 
 This tool is able to generate loaders with this features:
