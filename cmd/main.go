@@ -32,18 +32,31 @@ type LoaderTemplate struct {
 }
 
 // function to print the banner
-func banner(){
-  fmt.Println("  _   _                   _              _")
-  fmt.Println(" | | | |   ___     ___   | | __   __ _  | |")
-  fmt.Println(" | |_| |  / _ \\   / _ \\  | |/ /  / _` | | |")
-  fmt.Println(" |  _  | | (_) | | (_) | |   <  | (_| | |_|")
-  fmt.Println(" |_| |_|  \\___/   \\___/  |_|\\_\\  \\__,_| (_)")
+func banner() {
+    fmt.Println("\033[36m") // Cyan color for ice effect
+    fmt.Println("╔═══════════════════════════════════════════════════════════════════╗")
+    fmt.Println("║                                                                   ║")
+    fmt.Println("║    ▄▄▄▄    ██▓    ▄▄▄       ▄████▄   ██ ▄█▀ ██▓ ▄████▄  ▓█████    ║")
+    fmt.Println("║   ▓█████▄ ▓██▒   ▒████▄    ▒██▀ ▀█   ██▄█▒ ▓██▒▒██▀ ▀█  ▓█   ▀    ║")
+    fmt.Println("║   ▒██▒ ▄██▒██░   ▒██  ▀█▄  ▒▓█    ▄ ▓███▄░ ▒██▒▒▓█    ▄ ▒███      ║")
+    fmt.Println("║   ▒██░█▀  ▒██░   ░██▄▄▄▄██ ▒▓▓▄ ▄██▒▓██ █▄ ░██░▒▓▓▄ ▄██▒▒▓█  ▄    ║")
+    fmt.Println("║   ░▓█  ▀█▓░██████▒▓█   ▓██▒▒ ▓███▀ ░▒██▒ █▄░██░▒ ▓███▀ ░░▒████▒   ║")
+    fmt.Println("║   ░▒▓███▀▒░ ▒░▓  ░▒▒   ▓▒█░░ ░▒ ▒  ░▒ ▒▒ ▓▒░▓  ░ ░▒ ▒  ░░░ ▒░ ░   ║")
+    fmt.Println("║   ▒░▒   ░ ░ ░ ▒  ░ ▒   ▒▒ ░  ░  ▒   ░ ░▒ ▒░ ▒ ░  ░  ▒    ░ ░  ░   ║")
+    fmt.Println("║    ░    ░   ░ ░    ░   ▒   ░        ░ ░░ ░  ▒ ░░           ░      ║")
+    fmt.Println("║    ░          ░  ░     ░  ░░ ░      ░  ░    ░  ░ ░         ░  ░   ║")
+    fmt.Println("║         ░                  ░                   ░                  ║")
+    fmt.Println("║                                                                   ║")
+    fmt.Println("║                   ░▒▓█  B L A C K I C E  █▓▒░                     ║")
+    fmt.Println("║                           By MrDedSec                             ║")
+    fmt.Println("╚═══════════════════════════════════════════════════════════════════╝")
+    fmt.Println("\033[0m") // Reset color
 }
 
 // function to print the help panel
 func help_panel(){
   fmt.Println(`
-Usage of Hooka:
+Usage of BlackIce:
   REQUIRED:
     -i, --input string        payload to inject in raw format, as PE, as DLL or from a URL
     -o, --output string       name of output file (i.e. loader.exe)
@@ -102,7 +115,7 @@ Examples:
 // as the names may be a little bit confussing
 var techniques []string = []string{"ntcreatethreadex", "ntcreatethread", "suspendedprocess", "etwpcreateetwthread", "processhollowing", "no-rwx", "nrwx", "norwx", "ntqueueapcthreadex"}
 
-var buffer bytes.Buffer
+var buffer bytes.Buffer   
 
 func main() {
   // define variables that will hold CLI arguments values
