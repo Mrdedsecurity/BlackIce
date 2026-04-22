@@ -8,6 +8,7 @@ import os
 import sys
 from pathlib import Path
 import webbrowser
+import platform
 
 class BlackIceGUI:
     def __init__(self, root):
@@ -45,19 +46,33 @@ class BlackIceGUI:
         self.find_blackice_binary()
     
     def find_blackice_binary(self):
-        # Try to find the BlackIce binary in common locations
-        possible_paths = [
-            "./build/blackice_linux_amd64",
-            "./blackice_linux_amd64",
-            "/usr/local/bin/blackice",
-            "/usr/bin/blackice"
-        ]
+        # Try to find the BlackIce binary in common locations based on platform
+        system = platform.system()
+        possible_paths = []
+        
+        if system == "Windows":
+            possible_paths = [
+                ".\\blackice_windows_amd64.exe",
+                ".\\build\\blackice_windows_amd64.exe",
+                ".\\blackice.exe",
+                "C:\\Program Files\\BlackIce\\blackice.exe",
+                "C:\\Users\\%USERNAME%\\AppData\\Local\\BlackIce\\blackice.exe"
+            ]
+        else:  # Linux and others
+            possible_paths = [
+                "./build/blackice_linux_amd64",
+                "./blackice_linux_amd64",
+                "/usr/local/bin/blackice",
+                "/usr/bin/blackice"
+            ]
         
         self.blackice_path = None
         for path in possible_paths:
-            if os.path.exists(path):
-                self.blackice_path = path
-                self.status_var.set(f"Found BlackIce at {path}")
+            # Expand environment variables like %USERNAME%
+            expanded_path = os.path.expandvars(path)
+            if os.path.exists(expanded_path):
+                self.blackice_path = expanded_path
+                self.status_var.set(f"Found BlackIce at {expanded_path}")
                 return
         
         # If not found, ask user to locate it
@@ -165,17 +180,34 @@ class BlackIceGUI:
         self.sleep_check = ttk.Checkbutton(sleep_frame, text="Delay shellcode execution", variable=self.sleep_var)
         self.sleep_check.pack(anchor="w", padx=5, pady=5)
     
-    def create_evasion_tab(self):
-        evasion_frame = ttk.Frame(self.notebook)
-        self.notebook.add(evasion_frame, text="Evasion")
-        
-        # Evasion options section
-        evasion_options_frame = ttk.LabelFrame(evasion_frame, text="Evasion Options")
-        evasion_options_frame.pack(fill="x", padx=10, pady=10)
-        
-        self.sandbox_var = tk.BooleanVar()
-        self.sandbox_check = ttk.Checkbutton(evasion_options_frame, text="Enable sandbox evasion", variable=self.sandbox_var)
-        self.sandbox_check.grid(row=0, column=0, padx=5, pady=5, sticky="w")
-        
-        self.hashing_var = tk.BooleanVar()
-        self.hashing_check = ttk.Checkbutton(evasion_options
+   def create_evasion_tab(self):
+    evasion_frame = ttk.Frame(self.notebook)
+    self.notebook.add(evasion_frame, text="Evasion")
+    
+    # Evasion options section
+    evasion_options_frame = ttk.LabelFrame(evasion_frame, text="Evasion Options")
+    evasion_options_frame.pack(fill="x", padx=10, pady=10)
+    
+    self.sandbox_var = tk.BooleanVar()
+    self.sandbox_check = ttk.Checkbutton(evasion_options_frame, text="Enable sandbox evasion", variable=self.sandbox_var)
+    self.sandbox_check.grid(row=0, column=0, padx=5, pady=5, sticky="w")
+    
+    self.hashing_var = tk.BooleanVar()
+    self.hashing_check = ttk.Checkbutton(evasion_options_frame, text="Use API hashing", variable=self.hashing_var)
+    self.hashing_check.grid(row=1, column=0, padx=5, pady=5, sticky="w")
+    
+    self.cleanup_var = tk.BooleanVar()
+    self.cleanup_check = ttk.Checkbutton(evasion_options_frame, text="Enable cleanup", variable=self.cleanup_var)
+    self.cleanup_check.grid(row=2, column=0, padx=5, pady=5, sticky="w")
+    
+    # AMSI bypass section
+    amsi_frame = ttk.LabelFrame(evasion_frame, text="AMSI Bypass")
+    amsi_frame.pack(fill="x", padx=10, pady=10)
+    
+    self.amsi_var = tk.BooleanVar()
+    self.amsi_check = ttk.Checkbutton(amsi_frame, text="Enable AMSI bypass", variable=self.amsi_var)
+    self.amsi_check.pack(anchor="w", padx=5, pady=5)
+    
+    self.amsi_hook_var = tk.StringVar(value="Unhook")
+    ttk.Radiobutton(amsi_frame, text="Unhook", variable=self.amsi_hook_var, value="Unhook").pack(anchor="w", padx=20)
+    ttk.Radiobutton(amsi_frame, text="Patch", variable=self.amsi_hook_var, value="Patch").pack(anchor="w", padx=20)
